@@ -10,4 +10,7 @@
     <li><a href="cargarCliente.php">Cargar Cliente</a></li>
     <li><a href="cargarFactura.php">Cargar Factura</a></li>
     <li><a href="listarFacturas.php">Listar Facturas</a></li>
+    <li><a href="editarCliente.php?cuil=<?= $cliente['cuil'] ?>">Editar</a></li> 
+    <li><a href="editarProducto.php?id=<?= $producto['idproducto'] ?>">Editar</a></li>
+
 </ul>

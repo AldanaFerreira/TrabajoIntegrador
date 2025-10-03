@@ -1,10 +1,10 @@
 <?php
 class Cliente {
-    private String $cuil;
+    private string $cuil;
     private String $nombre;
     private String $apellido;
-    private Telefono $telefonos = [];
-    private Direccion $direcciones = [];
+    private array $telefonos = [];
+    private array $direcciones = [];
 
     public function __construct(string $nombre, string $apellido, string $cuil) {
         $this->nombre = $nombre;
@@ -12,12 +12,12 @@ class Cliente {
         $this->cuil = $cuil;
     }
 
-    public function agregarTelefono($telefono) 
+    public function agregarTelefono(Telefono $telefono) :  void
     {
         $this->telefonos[] = $telefono;
     }
 
-    public function agregarDireccion($direccion)
+    public function agregarDireccion(Direccion $direccion) : void
     {
         $this->direcciones[] = $direccion;
     }
@@ -34,12 +34,12 @@ class Cliente {
         return $this->cuil; 
     }
 
-    public function getTelefonos() : Telefono
+    public function getTelefonos() : array
     {
         return $this->telefonos; 
     }
 
-    public function getDirecciones() : Direccion
+    public function getDirecciones() : array
     { 
         return $this->direcciones;
     }
@@ -58,16 +58,19 @@ class Cliente {
     public function setNombre(String $nombre) : self
     {
         $this->nombre = $nombre; 
+        return $this;
     }
 
     public function setApellido($apellido) : self
     {
         $this->apellido = $apellido;
+        return $this;
     }
 
     public function setCuil($cuil) : self
     {
         $this->cuil = $cuil; 
+        return $this;
     }
 
 }

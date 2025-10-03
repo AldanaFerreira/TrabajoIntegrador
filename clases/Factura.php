@@ -1,18 +1,62 @@
 <?php
 class Factura {
-    private $id;
-    private $fecha;
-    private $cliente;
-    private $lineas = [];
+    private Int $id;
+    private DateTime $fecha;
+    private Cliente $cliente;
+    private Array $lineas = [];
 
-    public function __construct($id, $fecha, $cliente) {
+    public function __construct(int $id, DateTime $fecha, Cliente $cliente) {
         $this->id = $id;
         $this->fecha = $fecha;
         $this->cliente = $cliente;
     }
 
-    public function agregarLinea($linea) {
+    public function agregarLinea($linea)
+    {
         $this->lineas[] = $linea;
+    }
+
+    public function getId() : int
+    {
+        return $this->id; 
+    }
+
+    public function setId(int $id) : self
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function getFecha() : DateTime
+    { 
+        return $this->fecha; 
+    }
+
+    public function setFecha(DateTime $fecha) : self
+    {
+        $this->fecha = $fecha;
+        return $this;
+    }
+
+    public function getCliente() : Cliente
+    {
+        return $this->cliente; 
+    }
+    public function setCliente(Cliente $cliente) : self
+    {
+        $this->cliente = $cliente;
+        return $this;
+    }
+
+    public function getLineas() : array 
+    { 
+        return $this->lineas;
+    }
+
+    public function setLineas(array $lineas) : self
+    {
+        $this->lineas = $lineas;
+        return $this;
     }
 
     public function calcularTotal() {
@@ -23,10 +67,7 @@ class Factura {
         return $total;
     }
 
-    public function getId() { return $this->id; }
-    public function getFecha() { return $this->fecha; }
-    public function getCliente() { return $this->cliente; }
-    public function getLineas() { return $this->lineas; }
+
 }
 ?>
 
